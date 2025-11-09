@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Teacher {
 
     private char sex;
@@ -68,8 +70,29 @@ public class Teacher {
                 && (name.equalsIgnoreCase(getName()));
     }
 
-    public void changeDepartment(String department){
-        if (!(getDepartment().equalsIgnoreCase(department))) setDepartment(department);
+    public void changeDepartmentRandom(){
+
+        Random rd = new Random();
+        String newDepartment = "error";
+        int nextDepartment = rd.nextInt(4) + 1;
+        switch (nextDepartment) {
+            case 1:
+                newDepartment = "IT";
+                break;
+            case 2:
+                newDepartment = "MB";
+                break;
+            case 3:
+                newDepartment = "PE";
+                break;
+            case 4:
+                newDepartment = "ET";
+                break;
+        }
+
+
+        setDepartment(newDepartment);
+
     }
 
 }
