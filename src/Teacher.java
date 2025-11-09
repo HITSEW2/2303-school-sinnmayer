@@ -89,8 +89,6 @@ public class Teacher {
                 newDepartment = "ET";
                 break;
         }
-
-
         setDepartment(newDepartment);
 
     }
