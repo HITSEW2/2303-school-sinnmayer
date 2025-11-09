@@ -5,6 +5,29 @@ public class Teacher {
     private String department;
     private String name;
 
+    //KONSTRUKTOREN
+
+    public Teacher() {
+    }
+
+    public Teacher (String name, String dateOfBirth, char sex) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.sex = sex;
+    }
+
+    public Teacher (char sex, String dateOfBirth, String department, String name) {
+        this.sex = sex;
+        this.dateOfBirth = dateOfBirth;
+        this.department = department;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher Name: " + name + "\n Sex: " + sex + "\n Date of birth: " + dateOfBirth + "\n Department: " + department.toUpperCase();
+    }
+
     //GETTER SETTER
 
     //sex
@@ -35,4 +58,18 @@ public class Teacher {
     public void setName(String name) {
         this.name = name;
     }
+
+    //METHODEN
+
+    public boolean checkAttributes(char sex, String dateOfBirth, String department, String name) {
+        return (sex == getSex())
+                && (dateOfBirth.equalsIgnoreCase(getDateOfBirth()))
+                && (department.equalsIgnoreCase(getDepartment()))
+                && (name.equalsIgnoreCase(getName()));
+    }
+
+    public void changeDepartment(String department){
+        if (!(getDepartment().equalsIgnoreCase(department))) setDepartment(department);
+    }
+
 }

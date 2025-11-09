@@ -9,13 +9,14 @@ public class Student {
     //KONSTRUKTOREN
 
     public Student() {
-
+        year = 1;
     }
 
-    public Student (String name, String dateOfBirth, char sex) {
+    public Student (String name, String dateOfBirth, char sex, String department) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
+        this.department = department;
     }
 
     public Student (char sex, String dateOfBirth, String department, int year, String name) {
@@ -64,6 +65,11 @@ public class Student {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Student Name: " + name + "\n Sex: " + sex + "\n Year: " + year + "\n Date of birth: " + dateOfBirth + "\n Department: " + department.toUpperCase();
+    }
+
     //METHODEN
 
     public void raiseYear(int years) {
@@ -72,14 +78,12 @@ public class Student {
         if (getYear() > 5) setYear(5);
     }
 
-    public boolean checkStats(char sex, String dateOfBirth, String department, int year, String name) {
-        if ((sex == getSex())
+    public boolean checkAttributes(char sex, String dateOfBirth, String department, int year, String name) {
+        return (sex == getSex())
                 && (dateOfBirth.equalsIgnoreCase(getDateOfBirth()))
                 && (department.equalsIgnoreCase(getDepartment()))
                 && (year == getYear())
-                && (name.equalsIgnoreCase(getName()))) {
-            return true;
-        } else return false;
+                && (name.equalsIgnoreCase(getName()));
     }
 
 
