@@ -28,11 +28,11 @@ public class SchoolTest {
         //Nach den Änderugngen
 
         System.out.println("Nach den Änderungen: \n");
-        System.out.println(t1 + "\n");
-        System.out.println(t2 + "\n");
-        System.out.println(t3 + "\n");
-        System.out.println(s1 + "\n");
-        System.out.println(s2);
+        System.out.println("Department geändert \n" + t1 + "\n");
+        System.out.println("Date of birth korrigiert \n" + t2 + "\n");
+        System.out.println("Zufälliges Department erzeugt und vergeben\n" + t3 + "\n");
+        System.out.println("Name Geändert\n" + s1 + "\n");
+        System.out.println("Department Geändert\n" + s2);
 
     }
 }
